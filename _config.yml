@@ -4,7 +4,7 @@ header-img: "img/facebook.jpg"
 tagline: "cn"  
 description: "hiho|读而立·写而生"
 baseurl: ""
-url: "hihozhou.github.io"
+url: "http://hihozhou.github.io"
 
 # About/contact
 owner: 
@@ -20,7 +20,7 @@ douban_username:
 twitter_username:
 github_username: hihoZhou
 facebook_username: 
-weibo_username:
+weibo_username: 1770826737
 zhihu_username:
 
 # Build settings  

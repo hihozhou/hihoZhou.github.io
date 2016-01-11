@@ -61,7 +61,8 @@ description: 今天下午临时定下要出差。已抵浙江，刚刚安顿。�
 ## 5、启动nginx
 - sudo /user/local/nginx-1.6.3/sbin/nginx -c /user/local/nginx-1.6.3/conf/nginx.conf
 
-
+可以使用`ps aux | grep nginx`命令查看nginx是否启动成功
+![nginx_start_up_success.jpg](http://7xpyze.com1.z0.glb.clouddn.com/nginx_start_up_success.jpg)
 
 —End—
 
