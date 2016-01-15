@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-description: "学苟知本，六经皆我注脚 "
+description: "They call me a coder, but I think I'm an artist. "
 header-img: "img/green.jpg"
 ---
 
@@ -10,7 +10,8 @@ header-img: "img/green.jpg"
 
 我是hiho，记录分享技术知识。
 
-现在研习 **认知写作学** 。
+他们觉得我在敲代码,但是我觉得我在创作。他们觉得我是程序员,但我觉得我是一名艺术家。
+I was an artist when I was at coding.
 
 
 
