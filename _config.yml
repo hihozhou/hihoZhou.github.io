@@ -26,11 +26,20 @@ zhihu_username:
 # Build settings  
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
-markdown: kramdown
-highlighter: pygments
-permalink: pretty
+markdown: redcarpet
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+#highlighter: pygments
+permalink: date
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+#coderay:
+#    coderay_wrap:              div
+#    coderay_line_numbers:      inline
+#    coderay_line_number_start: 1
+#    coderay_tab_width:         4
+#    coderay_bold_every:        10
+#    coderay_css:               style
 #relative_permalinks: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
