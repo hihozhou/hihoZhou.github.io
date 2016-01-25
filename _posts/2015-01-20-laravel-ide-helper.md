@@ -17,17 +17,23 @@ description: 写不是义务，写本身就是写的报酬。
 
 进到laravel的项目中用composer命令下载提示所需的扩展库
 
->composer require barryvdh/laravel-ide-helper
+```bash
+composer require barryvdh/laravel-ide-helper
+```
 
 等composer下载完后,在`config/app.php`中的`providers`数组中添加
 
->Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+```bash
+Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+```
 
 ##生成提示文件
 
 用laravel Facades生成自动提示phpDoc,运行命令
 
->php artisan ide-helper:generate
+```bash
+php artisan ide-helper:generate
+```
 
 注意:首先要先清除`bootstrap/compiled.php`,因此在运行命令生成提示前先运行`php artisan clear-compiled`(生成后再运行`php artisan optimize`).
 
