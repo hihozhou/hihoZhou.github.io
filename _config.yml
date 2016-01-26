@@ -27,9 +27,12 @@ zhihu_username:
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
 markdown: redcarpet
-#redcarpet:
-#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 #highlighter: pygments
+#redcarpet:
+#  extensions: ["fenced_code_blocks"]
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+highlighter: pygments
 permalink: date
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
