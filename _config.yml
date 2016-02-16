@@ -31,7 +31,7 @@ markdown: redcarpet
 #redcarpet:
 #  extensions: ["fenced_code_blocks"]
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "tables"]
 highlighter: pygments
 permalink: date
 paginate: 8
