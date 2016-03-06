@@ -1,10 +1,10 @@
 ---
 layout: post
-title: php memcache扩展
+title: php memcached扩展
 date: 2015-05-18
 categories: blog
-tags: [php,memcache]
-description: 编译安装使用memcache 
+tags: [php,memcached]
+description: 编译安装使用memcached
 
 ---
 
@@ -122,6 +122,21 @@ cp /usr/local/php5/lib/php/extensions/no-debug-non-zts-20121212/memcached.so /us
 
 重启fpm OK
 
+
+##php memcached使用例子
+
+```php
+$mem  = new Memcached();
+
+$mem->addServer('127.0.0.1',11211);
+if( $mem->add("mystr","this is a memcache test!",3600)){
+    echo  '原始数据缓存成功!';
+}else{
+    echo '数据已存在：'.$mem->get("mystr");
+}
+```
+
+详细请参考[php memcached官方文档](http://php.net/manual/zh/class.memcached.php)
 
 —End—
 
