@@ -55,7 +55,7 @@ cp /usr/local/php5/lib/php/extensions/no-debug-non-zts-20121212/opcache.so /usr/
 修改php.ini文件
 
 ```
-ex
+zend_extension=opcache.so
 ; 开关打开
 opcache.enable=1
 
