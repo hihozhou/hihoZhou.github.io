@@ -1,7 +1,7 @@
 ---
 layout: post
 title: php cli进程起名
-date: 2016-04-01
+date: 2016-06-23
 categories: blog
 tags: [php,php系统编程]
 description: php cli
