@@ -8,13 +8,7 @@ description: php entrust
 
 ---
 
-注意:当前Pimple 3.x文档。 如果你用的是1.x版本， 请查看[Pimple 1.x 文档](https://github.com/silexphp/Pimple/tree/1.1)。 查看Pimple 1.x代码也是很好来学习更多关于如何创建一个简单的依赖注入容的方式(Pimple新版本更注重的是性能)。
 
-
-
-[TOC]
-
-Pimple是一个轻巧的PHP依赖注入容器。
 
 #Installation
 
