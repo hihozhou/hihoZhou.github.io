@@ -46,11 +46,11 @@ to routeMiddleware array in app/Http/Kernel.php.
 
 #Configuration
 
-Set the property values in the config/auth.php. These values will be used by entrust to refer to the correct user table and model.
+Set the property values in the config/auth.php. These values will be used by entrust to refer to the correct user table and model.  
 在`config/auth.php`中配置属性值.这些值将被entrust来引用正确的用户表和模型。
 
 
-You can also publish the configuration for this package to further customize table names and model namespaces.  
+You can also publish the configuration for this package to further customize table names and model namespaces.    
 你也可以创建一个配置来进一步自定义表名和模型命名空间  
 Just use php artisan vendor:publish and a entrust.php file will be created in your app/config directory.  
 只要用`php artisan vendor:publish`命令在`app/config`目录下创建一个entrust.php的文件
@@ -70,7 +70,7 @@ Now generate the Entrust migration:
 php artisan entrust:migration
 ```
 
-It will generate the \<timestamp\>_entrust_setup_tables.php migration. You may now run it with the artisan migrate command:
+It will generate the \<timestamp\>_entrust_setup_tables.php migration. You may now run it with the artisan migrate command:  
 它会创建\<timestamp\>_entrust_setup_tables.php迁移文件.你现在可以运行artisan migrate命令：
 
 ```bash
@@ -219,7 +219,7 @@ $user->attachRole($admin); // parameter can be an Role object, array, or id
 $user->roles()->attach($admin->id); // id only
 ```
 
-Now we just need to add permissions to those Roles:
+Now we just need to add permissions to those Roles:  
 现在我们只需要向这些角色添加权限：  
 
 ```php
@@ -245,7 +245,7 @@ $owner->attachPermissions(array($createPost, $editUser));
 ```
 
 ##Checking for Roles & Permissions(验证角色和权限)
-Now we can check for roles and permissions simply by doing:
+Now we can check for roles and permissions simply by doing:  
 现在我们可以简单地检查角色和权限：  
 
 ```php
@@ -255,7 +255,7 @@ $user->can('edit-user');   // false
 $user->can('create-post'); // true
 ```
 
-Both hasRole() and can() can receive an array of roles & permissions to check:
+Both hasRole() and can() can receive an array of roles & permissions to check:  
 `hasRole()`和`can()`方法都可以验证传入的角色和权限数组: 
 
 ```php
@@ -276,7 +276,7 @@ $user->can(['edit-user', 'create-post'], true); // false, user does not have edi
 You can have as many `Roles` as you want for each `User` and vice versa.  
 同一个`用户`可以有很多`角色`,反过来也一样,多个`用户`可以拥有同一个`角色`.
 
-The Entrust class has shortcuts to both can() and hasRole() for the currently logged in user:
+The Entrust class has shortcuts to both can() and hasRole() for the currently logged in user:  
 Entrust类为登录用户提供快捷的can()和hasRole():
 
 ```php
@@ -302,7 +302,7 @@ $user->can("*_users"); // true
 ```
 
 ##User ability(用户能力)
-More advanced checking can be done using the awesome ability function. It takes in three parameters (roles, permissions, options):
+More advanced checking can be done using the awesome ability function. It takes in three parameters (roles, permissions, options):  
 通过使用高级的方法可以实现更先进的验证.它需要三个参数(roles, permissions, options)：
 
 - roles is a set of roles to check.
@@ -321,7 +321,7 @@ $user->ability(array('admin', 'owner'), array('create-post', 'edit-user'));
 $user->ability('admin,owner', 'create-post,edit-user');
 ```
 
-This will check whether the user has any of the provided roles and permissions. In this case it will return true since the user is an `admin` and has the `create-post` permission.
+This will check whether the user has any of the provided roles and permissions. In this case it will return true since the user is an `admin` and has the `create-post` permission.  
 这将检查用户是否具有传入的角色列表和权限列表的其中一个。当用用户是`admin`角色和有`create-post`权限,方法将会返回true.
 
 The third parameter is an options array:  
@@ -442,6 +442,8 @@ To filter a route by permission or role you can call the following in your `app/
 
 * 2016年04月01日 13:00:00 初稿
 * 2016年04月02日 22:39:12 翻译原稿
+* 2016年07月13日 23:28:00 修改排版
+
 
 
 ## 原文
