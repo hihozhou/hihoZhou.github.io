@@ -29,7 +29,7 @@ Zizaco\Entrust\EntrustServiceProvider::class
 in the providers array and
 
 ```php
-Entrust' => Zizaco\Entrust\EntrustFacade::class
+'Entrust' => Zizaco\Entrust\EntrustFacade::class
 ```
 
 to the aliases array.
