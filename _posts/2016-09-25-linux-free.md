@@ -32,7 +32,111 @@ free：未被使用的buffers 与cache 和未被分配的内存之和，这就�
 ![linux-free.png](http://7xpyze.com1.z0.glb.clouddn.com/linux-free.png)
 
 
+```
+root@VM-29-177-ubuntu:/home/ubuntu# cat /proc/meminfo
+MemTotal:        4048292 kB
+MemFree:          679300 kB
+Buffers:          272464 kB
+Cached:          2415960 kB
+SwapCached:         3060 kB
+Active:          1772892 kB
+Inactive:        1274880 kB
+Active(anon):     285144 kB
+Inactive(anon):    97376 kB
+Active(file):    1487748 kB
+Inactive(file):  1177504 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2067584 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        357912 kB
+Mapped:            33292 kB
+Shmem:             23168 kB
+Slab:             270212 kB
+SReclaimable:     239804 kB
+SUnreclaim:        30408 kB
+KernelStack:        1056 kB
+PageTables:        13972 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4121292 kB
+Committed_AS:     944608 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10072 kB
+VmallocChunk:   34359682968 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     63488 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       28664 kB
+DirectMap2M:     4165632 kB
 
+
+root@VM-29-177-ubuntu:/home/ubuntu# free -m
+             total       used       free     shared    buffers     cached
+Mem:          3953       3280        672         22        266       2359
+-/+ buffers/cache:        655       3298
+Swap:         2047         28       2019
+
+=================================
+root@VM-29-177-ubuntu:/home/ubuntu# echo 1 > /proc/sys/vm/drop_caches
+root@VM-29-177-ubuntu:/home/ubuntu# cat /proc/meminfo
+MemTotal:        4048292 kB
+MemFree:         3466940 kB
+Buffers:            1056 kB
+Cached:            48808 kB
+SwapCached:         3060 kB
+Active:           234912 kB
+Inactive:         108644 kB
+Active(anon):     214860 kB
+Inactive(anon):   102092 kB
+Active(file):      20052 kB
+Inactive(file):     6552 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        2067584 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        292344 kB
+Mapped:            33248 kB
+Shmem:             23168 kB
+Slab:             188596 kB
+SReclaimable:     158452 kB
+SUnreclaim:        30144 kB
+KernelStack:        1048 kB
+PageTables:        13148 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4121292 kB
+Committed_AS:     860232 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10072 kB
+VmallocChunk:   34359682968 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     63488 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       28664 kB
+DirectMap2M:     4165632 kB
+root@VM-29-177-ubuntu:/home/ubuntu# free -m
+             total       used       free     shared    buffers     cached
+Mem:          3953        559       3394         22          1         47
+-/+ buffers/cache:        510       3443
+Swap:         2047         28       2019
+
+
+```
 
 
 —End—
