@@ -18,6 +18,15 @@ description: linux命令。
 apt-cache depends build-essential
 ```
 
+##cmake . -LH  
+`cmake . -LH` — 查看cmake源码编译的所有配置选项
+
+```bash
+查看cmake源码编译的所有配置选项
+```
+
+
+
 
 —End—
 
