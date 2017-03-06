@@ -51,6 +51,7 @@ sudo make install
 ```
 
 测试一下：
+
 ```bash
 python3.5
 >>> import cv2
