@@ -18,6 +18,7 @@ sudo easy_install3 pip
 ```
 
 然后是 `numpy`：
+
 ```bash
 pip3 install numpy
 ```
@@ -30,6 +31,7 @@ sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavform
 ```
 
 下载 OpenCV 3.0，编译安装：
+
 ```bash
 wget https://github.com/Itseez/opencv/archive/3.0.0.zip
 
