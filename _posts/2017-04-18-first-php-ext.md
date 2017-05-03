@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 开发第一PHP扩展
+title: PHP扩展开发--第一扩展（扩展开发流程）
 date: 2017-04-18
 categories: blog
 tags: [php,c,php扩展开发]
