@@ -1,7 +1,7 @@
 ---
 layout: post
 title: linux下编译C++写的opencv程序
-date: 2017-04-27
+date: 2017-05-11
 categories: blog
 tags: [C++,opencv,linux,clion]
 description: c++ opencv程序编译
