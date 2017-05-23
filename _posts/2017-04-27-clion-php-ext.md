@@ -104,7 +104,7 @@ make
 make test
 ```
 
-![Run Debug](http://7xpyze.com1.z0.glb.clouddn.com/php_extension_clion_run_debug.png)
+![Run Debug](/source/php_extension_clion_run_debug.png)
 
 —End—
 
