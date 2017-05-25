@@ -32,6 +32,5 @@ description:
 * 2017年05月25日 18:03 初稿
 
 ## 参考文章
-[《与 UNIX 构建系统交互: config.m4(php官方手册)》](http://php.net/manual/zh/internals2.buildsys.configunix.php)
 
 
