@@ -11,16 +11,18 @@ description: c++ opencv程序编译
 
 ## C++编译
 linux下C++的编译命令是：
+
 ```bash
 g++ xxx.cpp -o xxx
 #e.g:
-g++ main.cpp -o main.cpp
+g++ main.cpp -o main
 
 ```
 
 
 ## C++ opencv程序编译出错
 我刚装玩opencv3,然后立马写了个测试的程序
+
 ```c++
 #include <iostream>
 
@@ -39,13 +41,14 @@ int main() {
 运行命令`g++ main.cpp -o main`
 
 发现编译并没有成功，报`undefined reference to cv::imread`错误
-![compile fail](http://7xpyze.com1.z0.glb.clouddn.com/linux_compile_c++_opencv_program_fail.png)
+![compile fail](/source/images/linux-compile-opencv-c++-file/compile_fail.png)
 
 原来是C++编译的时候没有引入opencv的源码库，所以只需要在编译的时候带上就好了
 `pkg-config --cflags opencv`–cflags 参数参数可以给出在编译时所需要的选项
 `pkg-config --libs opencv`–libs 参数参数可以给出连接时的选项
 
 把命令加上opencv的编译选项和链接选项就可以编译成功
+
 ```
 g++ main.cpp -o main `pkg-config --cflags --libs opencv`
 ./main
@@ -54,6 +57,7 @@ g++ main.cpp -o main `pkg-config --cflags --libs opencv`
 
 ## Clion调试
 由于clion使用的是cmake进行编译
+
 ```
 cmake_minimum_required(VERSION 3.5)#cmake版本
 project( DisplayImage )#项目名称
