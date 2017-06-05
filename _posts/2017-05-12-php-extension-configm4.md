@@ -91,7 +91,9 @@ g++ main.cpp -o main `pkg-config --cflags --libs opencv`
 ## php用config.m4编译的坑处
 如果你的php扩展需要用到其他动态库进行编译或链接，那么这个时候需要用到config.m4进行配置。  
 但是需要注意，要修改一下扩展的代码，make才会重新对配置重新加载编译。  
-不然还是会未定义符号报错`php: symbol lookup error: /path/to/modules/myext.so: undefined symbol: otherlib_some_function`
+不然还是会未定义符号报错`php: symbol lookup error: /path/to/modules/myext.so: undefined symbol: otherlib_some_function`  
+我就尝试过，在引用opencv的动态库的时候，发现config.m4是正确的，但是只修改了config.m4而没有修改代码，导致没有生效
+
 
 
 
