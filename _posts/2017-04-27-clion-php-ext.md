@@ -75,9 +75,14 @@ include_directories(${PHP_SOURCE})
 我们可以在CMakeList.txt文件加上：
 
 ```
-add_custom_target(makefile COMMAND phpize && ./configure --with-php-config=/usr/bin/php-config &&  make
+add_custom_target(makefile COMMAND phpize && ./configure --with-php-config=/usr/bin/php-config  &&  $(MAKE) clean &&  $(MAKE)
         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 ```
+
+说明：
+
+- $(MAKE) ，这里其实表示的是命令`make`的意思，如果不加$()回warning：`make[4]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.`
+- $(MAKE) clean，这里其实就是`make clean`，这里是防止一些编译缓存，例如切换php debug版本等
 
 然后点击菜单栏上的`Run` -> `Edit Configurations`
 ![Edit Configurations](/source/images/clion-php-ext/php_extension_clion_run_edit_config_1.png)
@@ -100,6 +105,7 @@ add_custom_target(makefile COMMAND phpize && ./configure --with-php-config=/usr/
 cd /home/hiho/Sources/php-7.0.15/ext/my_functions
 phpize
 ./configure --with-php-config=/usr/bin/php-config
+make clean
 make
 make test
 ```
@@ -111,7 +117,8 @@ make test
 ## 迭代
 
 
-* 2016年04月18日 11:14 初稿
+* 2017年04月18日 11:14 初稿
+* 2017年07月05日 12:06 补充编译命令
 
 ## 参考文章
 [《使用CLion开发PHP扩展》](http://ju.outofmemory.cn/entry/218055)
