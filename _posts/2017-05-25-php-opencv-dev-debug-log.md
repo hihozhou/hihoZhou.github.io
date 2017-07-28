@@ -24,6 +24,13 @@ description:
 
 ## php对象属性自动绑定c++对象属性
 
+## PHP扩展debug和非debug模式切换
+
+## PHP扩展对象绑定数组属性
+
+## PHP扩展用户传入闭包在C++回调事件中执行
+[PHP扩展下的用户传入闭包在C++回调事件中执行](/blog/2017/07/28/php-extension-dev-closure-in-c-callback.html)
+
 —End—
 
 
