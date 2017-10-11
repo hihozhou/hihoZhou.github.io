@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 腾讯云服务器云硬盘挂载
-date: 2017-08-10
+date: 2015-08-10
 categories: blog
 tags: [腾讯云，硬盘挂载]
 description: 腾讯云服务器购买后，云硬盘挂载
@@ -98,7 +98,7 @@ mount /dev/vdb /disk2
 
 ## 迭代
 
-* 2017年08月10日 10：41 初稿
+* 2015年08月10日 10：41 初稿
 
 ## 参考
 
