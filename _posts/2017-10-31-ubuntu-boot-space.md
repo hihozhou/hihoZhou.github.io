@@ -41,4 +41,4 @@ description: Ubuntu下boot分区剩余空间不足解决
 
 ## 参考
 
-- [php-ion](https://github.com/php-ion/php-ion/blob/982f24bcc7b880488e392e45448247314a16ade6/src/ion/ion_callback.c)
+- [Ubuntu下boot分区剩余空间不足解决](http://blog.csdn.net/shyanyang/article/details/35996219)
