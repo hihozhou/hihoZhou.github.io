@@ -16,7 +16,7 @@ description: 今天下午临时定下要出差。已抵浙江，刚刚安顿。�
 
 [TOC]
 
-##1、编译安装PCRE库——为了rewrite
+## 1、编译安装PCRE库——为了rewrite
 
 - tar –zxvf pcre-8.32.tar.gz
 - cd pcre-8.32
@@ -27,7 +27,7 @@ description: 今天下午临时定下要出差。已抵浙江，刚刚安顿。�
 
 
 
-##2、安装zlib库——为了gzip压缩
+## 2、安装zlib库——为了gzip压缩
 
 - mkdir /user/local/zlib-1.2.8
 - tar –zxvf zlib-1.2.8.tar.gz
@@ -66,7 +66,7 @@ description: 今天下午临时定下要出差。已抵浙江，刚刚安顿。�
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2014年7月15日 19:09:17 初稿

@@ -11,13 +11,13 @@ description: php-fpm optimize
 
 [TOC]
 
-#用到命令
+# 用到命令
 ```bash
 free -m #查看内存使用情况
 top 
 ```
 
-#背景
+# 背景
 最近公司收购一家公司,原是ucloud服务商的服务器,然后着手搬迁到腾讯云上.  
 总用户量在100W左右,平常还是没什么问题,但是一到了微信公众帐号推送的时候就会一直报警.
 
@@ -32,7 +32,7 @@ top
 
 服务器比原服务器要好,但是表现的性能却不如以前.
 
-#排查
+# 排查
 
 nginx  
 一开始我怀疑是不是nginx的问题,但是发现两者的配置发现是几乎一样的,因为迁移的时候nginx尽量配置为旧服务器一样
@@ -67,9 +67,9 @@ pm.start_servers = 2
 
 法相fpm默认启动3个进程
 
-#配置fpm参数进行优化
+# 配置fpm参数进行优化
 
-###需要配置的参数
+### 需要配置的参数
 
 - pm : 表示使用那种方式，有两个值可以选择，就是static（静态）或者dynamic（动态）。
       在更老一些的版本中，dynamic被称作apache-like。这个要注意看配置文件的说明。
@@ -78,13 +78,13 @@ pm.start_servers = 2
 - pm.min_spare_servers：动态方式下的最小php-fpm进程数
 - pm.max_spare_servers：动态方式下的最大php-fpm进程数量
 
-###区别
+### 区别
 如果pm设置为 static，那么其实只有pm.max_children这个参数生效。系统会开启设置数量的php-fpm进程。  
 如果pm设置为 dynamic，那么pm.max_children参数失效，后面3个参数生效。  
 系统会在php-fpm运行开始 的时候启动pm.start_servers个php-fpm进程，  
 然后根据系统的需求动态在pm.min_spare_servers和pm.max_spare_servers之间调整php-fpm进程数  
 
-###如何配置
+### 如何配置
 对于我们的服务器，选择哪种执行方式比较好呢？事实上，跟Apache一样，运行的PHP程序在执行完成后，或多或少会有内存泄露的问题。  
 这也是为什么开始的时候一个php-fpm进程只占用3M左右内存，运行一段时间后就会上升到20-30M的原因了。  
 对于内存大的服务器（比如8G以上）来说，指定静态的max_children实际上更为妥当，因为这样不需要进行额外的进程数目控制，会提高效率。 
@@ -97,7 +97,7 @@ pm.start_servers = 2
 比如说512M的VPS，建议pm.max_spare_servers设置为20。至于pm.min_spare_servers，则建议根据服务器的负载情况来设置，比如服务器上只是部署php环境的话，比较合适的值在5~10之间。  
 
 
-#优化后的参数
+# 优化后的参数
 
 100*25M=2500M  
 pm = static  
@@ -111,7 +111,7 @@ pm.max_requests = 1000
 
 
 
-##迭代
+## 迭代
 
 
 * 2016年09月26日 16:15:00 初稿

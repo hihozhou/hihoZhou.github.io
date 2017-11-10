@@ -23,9 +23,9 @@ description: ubuntu opencv安装。
 - [optional] libdc1394 2.x
 - [optional] libjpeg-dev, libpng-dev, libtiff-dev, libjasper-dev, libdc1394-22-dev
 
-##安装依赖库
+## 安装依赖库
 
-###安装需要编译安装opencv的环境
+### 安装需要编译安装opencv的环境
 
 ```bash
 sudo apt-get install build-essential cmake pkg-config
@@ -34,7 +34,7 @@ sudo apt-get install build-essential cmake pkg-config
 - build-essential(c\c++编译环境)
 - cmake (编译工具)
 
-###安装必需依赖库
+### 安装必需依赖库
 1.安装图片I/O库
 
 ```bash
@@ -55,7 +55,7 @@ sudo apt-get -y install  libgtk2.0-dev
 sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 ```
 
-###安装可选依赖库
+### 安装可选依赖库
 1.install support for Firewire video cameras
 
 ```bash
@@ -90,13 +90,13 @@ sudo apt-get -y install libqt4-dev
 
 
 
-##安装opencv
+## 安装opencv
 
-###下载opencv
+### 下载opencv
 下载地址:[sourceforge](https://sourceforge.net/projects/opencvlibrary/) or [github](https://github.com/opencv/opencv)
 
 
-###编译安装
+### 编译安装
 
 ```bash
 #解压
@@ -120,7 +120,7 @@ OK,见到这个画面时候,恭喜你,opencv安装成功了.
 不过我还要安转python调用opencv进行测试
 
 
-##安装python-opencv库
+## 安装python-opencv库
 ```bash
 sudo apt-get install python-opencv
 sudo apt-get install python-numpy
@@ -128,7 +128,7 @@ sudo apt-get install python-numpy
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年10月23日 22:13 

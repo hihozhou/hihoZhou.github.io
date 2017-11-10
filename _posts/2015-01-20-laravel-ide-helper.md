@@ -13,7 +13,7 @@ description: 写不是义务，写本身就是写的报酬。
 
 代码自动补全流程
 
-##安装
+## 安装
 
 进到laravel的项目中用composer命令下载提示所需的扩展库
 
@@ -27,7 +27,7 @@ composer require barryvdh/laravel-ide-helper
 Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 ```
 
-##生成提示文件
+## 生成提示文件
 
 用laravel Facades生成自动提示phpDoc,运行命令
 
@@ -42,7 +42,7 @@ OK,现在你的PhpStrom已经可以对laravel代码自动提示了
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2015年1月20日 13:04:17 初稿

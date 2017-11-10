@@ -14,14 +14,14 @@ description: php mcrypt
 
 [TOC]
 
-##1、mcrypt简单介绍
+## 1、mcrypt简单介绍
 
 　　PHP程序员们在编写代码程序时，除了要保证代码的高性能之外，还有一点是非常重要的，那就是程序的安全性保障。PHP除了自带的几种加密函数外，还有功能更全面的PHP加密扩展库Mcrypt和Mhash。
 　　其中，Mcrypt扩展库可以实现加密解密功能，就是既能将明文加密，也可以密文还原。  
 　　mcrypt 是 php 里面重要的加密支持扩展库，linux环境下：该库在默认情况下不开启。window环境下：PHP>=5.3,默认开启mcrypt扩展。  
 　　Mcrypt库支持20多种加密算法和8种加密模式，具体可以通过函数mcrypt_list_algorithms()和mcrypt_list_modes()来显示
 
-##2、php mcrypt库依赖
+## 2、php mcrypt库依赖
 要使用该扩展，必须首先安装mcrypt标准类库，注意的是mcrypt软件依赖libmcrypt和mhash两个库。
 ![依赖关系图](http://img.my.csdn.net/uploads/201211/20/1353390822_1764.jpg)
 
@@ -32,7 +32,7 @@ description: php mcrypt
 - 安装mcrypt库[(下载地址)](http://sourceforge.net/project/showfiles.php?group_id=4286&package_id=4300&release_id=645636)
 - 编译php mcrypt扩展库
 
-##3、安装libmcrypt库
+## 3、安装libmcrypt库
 
 ```bash
 tar -zxvf libmcrypt-2.5.8.tar.gz
@@ -107,7 +107,7 @@ extension=mcrypt.so
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年3月13日 22:39:12 初稿

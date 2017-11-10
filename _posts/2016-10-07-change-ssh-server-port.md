@@ -13,13 +13,13 @@ description: linux修改ssh服务器默认端口
 
 [TOC]
 
-###修改配置文件
+### 修改配置文件
 
 ```bash
 vim /etc/ssh/sshd_config
 ```
 
-###找到Port 22，然后将端口22改为你想要的端口号:
+### 找到Port 22，然后将端口22改为你想要的端口号:
 
 ```
 ...
@@ -32,7 +32,7 @@ Port 22
 
 ```
 
-###重启ssh服务器
+### 重启ssh服务器
 
 ```
 ubuntu@VM-29-177-ubuntu:~$ sudo service ssh restart 
@@ -41,13 +41,13 @@ ssh start/running, process 19578
 
 ```
 
-###测试
+### 测试
 
 ```bash
 ssh localhost -p 端口
 ```
 
-###链接命令
+### 链接命令
 
 ```
 ssh -l ubuntu IP -p 端口
@@ -58,7 +58,7 @@ ssh -l ubuntu IP -p 端口
 
 
 
-##迭代
+## 迭代
 
 
 * 2016年10月07日 16:27:00 初稿

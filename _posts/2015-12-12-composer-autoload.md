@@ -16,13 +16,13 @@ tags: [composer,composer自动加载]
 
 [TOC]
 
-##1、简介
+## 1、简介
 
 Composer 是PHP的一个包依赖管理工具，类似Ruby中的RubyGems或者Node中的NPM，它并非官方，但现在已经非常流行。
 此文介绍Composer的autoload的内容吧。
 
 
-##composer.json声明依赖关系
+## composer.json声明依赖关系
 项目中的composer是由`composer.json`文件来配置的
 
 举例来说,加入我们在项目中用到[monolog库](https://github.com/Seldaek/monolog),我们需要在composer.json里告诉composer我们需要它：  
@@ -48,7 +48,7 @@ composer require "monolog/monolog:1.2.*"
 方法2通过composer命令帮你运行方法1的操作,本人更推荐方法1的操作。  
 
 
-##composer库使用
+## composer库使用
 好，现在安装完了，该怎么使用呢?  
 Composer自动生成了一个autoload文件，你只需要引用它
 
@@ -87,7 +87,7 @@ o(∩∩)o...哈哈,有没有立马爱上的感觉.
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年02月09日 14:22:17 初稿

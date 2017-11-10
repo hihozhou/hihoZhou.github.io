@@ -18,7 +18,7 @@ tags: [php,opcache]
 
 [TOC]
 
-##简介
+## 简介
 OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。
 
 作用概括就是:OpCache 的加速原理是把编译后的 bytecode 存储在内存里面, 避免重复编译 PHP 所造成的资源浪费.
@@ -30,7 +30,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。 对于 PHP 5.2，5
 如果你第一次安装php,那么你只需要在.Configure 配置的时候添加"--enable-opcache"参数,
 而我们今天在不重新编译情况下添加opcache扩展并且配置使用
 
-##1、添加opcache扩展
+## 1、添加opcache扩展
 
 编译opcache扩展
 
@@ -197,12 +197,12 @@ Percentage of the requests served within a certain time (ms)
 
 ```
 
-##总结
+## 总结
 由于php语言动态解析的特性，使用opcache和apc等opcode缓存是很有必要的。
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年3月2日 14:22:17 初稿

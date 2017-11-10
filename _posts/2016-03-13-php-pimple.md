@@ -16,7 +16,7 @@ description: php pimple
 
 Pimple是一个轻巧的PHP依赖注入容器。
 
-##安装
+## 安装
 
 在你项目中使用Pimple前,要先通过composer.json文件添加它:
 
@@ -35,7 +35,7 @@ $ make
 $ make install
 ```
 
-##使用
+## 使用
 
 创建一个容器实例：
 
@@ -48,7 +48,7 @@ $container = new Container();
 像许多其他的依赖注入容器，Pimple管理两种不同类型的数据：服务和参数。
 
 
-###定义服务
+### 定义服务
 服务是庞大的系统中做一些工作的对象,服务的例子:一个数据库链接,一个模板引擎或邮件.几乎所有的全局对象都是服务  
 通过匿名方法,并且返回对象的实例来定义服务
 
@@ -77,7 +77,7 @@ $session = $container['session'];
 // $session = new Session($storage);
 ```
 
-###定义服务工厂
+### 定义服务工厂
 默认情况下,每次你获取一个服务,Pimple返回同一个实例给你.如果你想所有的调用返回不同的实例,可以使用factory()函数包装你的匿名方法.
 
 ```php
@@ -105,7 +105,7 @@ $container['session_storage'] = function ($c) {
 
 你现在可以容易的通过重写`session_storage_class`参数更改`cookie_name`的值,而不是重新定义服务
 
-###保护参数
+### 保护参数
 因为Pimple用匿名方法定义服务,你需要用protect()方法包裹匿名方法来存储保护参数:
 
 ```php
@@ -114,7 +114,7 @@ $container['random_func'] = $container->protect(function () {
 });
 ```
 
-###修改定义后的服务
+### 修改定义后的服务
 在某些情况下，您可能要修改它已定义的服务定义。在你的服务被创建后,你可以使用extend()方法添加额外的代码:
 
 ```php
@@ -130,7 +130,7 @@ $container->extend('session_storage', function ($storage, $c) {
 ```
 第一个参数是需要扩展的服务名称,其次是一个获取对象实例和容器访问权限的方法.
 
-###Extending a Container扩展一个容器
+### Extending a Container扩展一个容器
 如果你重复的使用相同的库，你可能想从一个项目到另外一个项目重新使用一些服务;通过Pimple\ServiceProviderInterface实现封装你的服务到provider
 
 ```php
@@ -153,7 +153,7 @@ Then, register the provider on a Container:
 $pimple->register(new FooProvider());
 ```
 
-###获取服务的创建方法
+### 获取服务的创建方法
 你访问一个对象时，Pimple会自动调用您定义的匿名函数，为您创建服务对象。如果你想获得原访问此方法，您可以使用raw()方法：
 
 
@@ -166,13 +166,13 @@ $sessionFunction = $container->raw('session');
 
 ```
 
-#谁在支持Pimple?
+# 谁在支持Pimple?
 Pimple是[Fabien Potencier](http://fabien.potencier.org/)写的,[Symfony框架](http://www.symfony.com/)的作者.Pimple是MIT许可下发布.
 
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年3月13日 22:39:12 初稿

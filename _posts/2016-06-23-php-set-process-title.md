@@ -11,17 +11,17 @@ description: php cli
 
 [TOC]
 
-#简介
+# 简介
 　　在php cli开发中,有时候我们需要把进程服务在占住在内存当中(例如守护进程),
 如果想要快速区分找到该服务进程,我们不妨可以给该服务进程起一个别名
 
-#实现思路
+# 实现思路
 可以在运行php的进程中通过代码实现该改变该进程的名称
 
 - [cli_set_process_title](http://php.net/manual/en/function.cli-set-process-title.php)(在php版本>=5.5中自带的函数)
 - [setproctitle](http://php.net/manual/en/function.setproctitle.php)(protitle扩展的函数)
 
-#代码例子
+# 代码例子
 
 ```php
 /**
@@ -62,7 +62,7 @@ php test.php
 
 
 
-##迭代
+## 迭代
 
 
 * 2016年06月23日 16:29:00 初稿

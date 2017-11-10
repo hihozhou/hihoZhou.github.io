@@ -16,7 +16,7 @@ description: 编译安装使用memcached
 
 [TOC]
 
-##安装memcache服务端(memcached)
+## 安装memcache服务端(memcached)
 
 可以到[memcached官网](http://memcached.org/downloads)下载 or 直接命令运行下载最新版本:
 
@@ -54,7 +54,7 @@ ps -aux | grep memcache
 ```
 
 
-##安装memcached客户端(php memcached扩展)
+## 安装memcached客户端(php memcached扩展)
 这个扩展需要» libmemcached客户端库（版本大于等于 1.0.0）。链接memcached服务器时使用SASL认证，需要libmemcached 必须开启SASL选项。
 先安装libmemcached
 
@@ -123,7 +123,7 @@ cp /usr/local/php5/lib/php/extensions/no-debug-non-zts-20121212/memcached.so /us
 重启fpm OK
 
 
-##php memcached使用例子
+## php memcached使用例子
 
 ```php
 $mem  = new Memcached();
@@ -140,7 +140,7 @@ if( $mem->add("mystr","this is a memcache test!",3600)){
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2015年5月18日 08:09:12 初稿

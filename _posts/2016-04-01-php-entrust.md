@@ -10,7 +10,7 @@ description: php entrust
 
 
 
-#Installation
+# Installation
 
 In order to install Laravel 5 Entrust, just add
 
@@ -44,7 +44,7 @@ If you are going to use Middleware (requires Laravel 5.1 or later) you also need
 
 to routeMiddleware array in app/Http/Kernel.php.
 
-#Configuration
+# Configuration
 
 Set the property values in the config/auth.php. These values will be used by entrust to refer to the correct user table and model.  
 在`config/auth.php`中配置属性值.这些值将被entrust来引用正确的用户表和模型。
@@ -61,7 +61,7 @@ Copied File [/vendor/zizaco/entrust/src/config/config.php] To [/config/entrust.p
 Publishing complete for tag []!
 ```
 
-#User relation to roles
+# User relation to roles
 
 Now generate the Entrust migration:  
 开始创建entrust数据库表:
@@ -84,9 +84,9 @@ php artisan migrate
 - role_user — stores many-to-many relations between roles and users储存用户表和角色表之间多对多的关系表
 - permission_role — stores many-to-many relations between roles and permissions储存角色和权限之间多对多的关系表
 
-#Models(模型)
+# Models(模型)
 
-##Role(角色)
+## Role(角色)
 Create a Role model inside app/models/Role.php using the following example:  
 使用下面例子在`app/models/Role.php`创建角色模型:
 
@@ -114,7 +114,7 @@ Both display_name and description are optional; their fields are nullable in the
 显示的名称和详细描述是可选填写的;它们的字段在数据库中是可为空的.
 
 
-##Permission(权限)
+## Permission(权限)
 
 Create a Permission model inside app/models/Permission.php using the following example:  
 使用下面例子在`app/models/Permission.php`创建权限模型:  
@@ -142,7 +142,7 @@ The Permission model has the same three attributes as the Role:
 In general, it may be helpful to think of the last two attributes in the form of a sentence: "The permission display_name allows a user to description."  
 总的来说，
 
-##User
+## User
 Next, use the EntrustUserTrait trait in your existing User model. For example:  
 然后,在你的User模型中使用EntrustUserTrait的trait.例如:
 
@@ -170,7 +170,7 @@ composer dump-autoload
 
 And you are ready to go.你已经准备好开发了
 
-##Soft Deleting
+## Soft Deleting
 
 The default migration takes advantage of onDelete('cascade') clauses within the pivot tables to remove relations when a parent record is deleted. If for some reason you cannot use cascading deletes in your database, the EntrustRole and EntrustPermission classes, and the HasRole trait include event listeners to manually delete records in relevant pivot tables. In the interest of not accidentally deleting data, the event listeners will not delete pivot data if the model uses soft deleting. However, due to limitations in Laravel's event listeners, there is no way to distinguish between a call to delete() versus a call to forceDelete(). For this reason, before you force delete a model, you must manually delete any of the relationship data (unless your pivot tables uses cascading deletes). For example:
 
@@ -187,9 +187,9 @@ $role->perms()->sync([]); // Delete relationship data
 $role->forceDelete(); // Now force delete will work regardless of whether the pivot table has cascading delete
 ```
 
-#Usage(用法)
+# Usage(用法)
 
-##概念
+## 概念
 让我们从创建下面的角色和权限开始：
 
 ```php
@@ -244,7 +244,7 @@ $owner->attachPermissions(array($createPost, $editUser));
 // equivalent to $owner->perms()->sync(array($createPost->id, $editUser->id));
 ```
 
-##Checking for Roles & Permissions(验证角色和权限)
+## Checking for Roles & Permissions(验证角色和权限)
 Now we can check for roles and permissions simply by doing:  
 现在我们可以简单地检查角色和权限：  
 
@@ -301,7 +301,7 @@ $user->can("admin.*"); // true
 $user->can("*_users"); // true
 ```
 
-##User ability(用户能力)
+## User ability(用户能力)
 More advanced checking can be done using the awesome ability function. It takes in three parameters (roles, permissions, options):  
 通过使用高级的方法可以实现更先进的验证.它需要三个参数(roles, permissions, options)：
 
@@ -376,7 +376,7 @@ Entrust::ability('admin,owner', 'create-post,edit-user');
 Auth::user()->ability('admin,owner', 'create-post,edit-user');
 ```
 
-##Blade templates(Blade模板)
+## Blade templates(Blade模板)
 Three directives are available for use within your Blade templates. What you give as the directive arguments will be directly passed to the corresponding `Entrust` function.
 在Blade模板中,你有可以三个指令.你给的指令参数将被直接传递到相应的`Entrust`方法。
 
@@ -398,7 +398,7 @@ Three directives are available for use within your Blade templates. What you giv
 @endability
 ```
 
-##Middleware(中间件)
+## Middleware(中间件)
 You can use a middleware to filter routes and route groups by permission or role  
 你可以使用中间件来过滤路由和路由组的权限或角色
 
@@ -427,7 +427,7 @@ For more complex situations use ability middleware which accepts 3 parameters: r
 'middleware' => ['ability:admin|owner,create-post|edit-user,true']
 ```
 
-##Short syntax route filter(短语法规则路由过滤器)
+## Short syntax route filter(短语法规则路由过滤器)
 
 To filter a route by permission or role you can call the following in your `app/Http/routes.php`:
 
@@ -437,7 +437,7 @@ To filter a route by permission or role you can call the following in your `app/
 
 
 
-##迭代
+## 迭代
 
 
 * 2016年04月01日 13:00:00 初稿

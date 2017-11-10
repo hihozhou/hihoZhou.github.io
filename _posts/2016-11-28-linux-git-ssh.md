@@ -9,7 +9,7 @@ description: git使用ssh
 ---
 
 
-##检查本机ssh key配置
+## 检查本机ssh key配置
 
 ```bash
 $ cd ~/.ssh && ls -l
@@ -19,7 +19,7 @@ $ cd ~/.ssh && ls -l
 
 ![linux-git-ssh-check.png](http://7xpyze.com1.z0.glb.clouddn.com/linux-git-ssh-check.png)
 
-##生成新的ssh key
+## 生成新的ssh key
 ```bash
 #进入用户的ssh管理目录，没有则自行创建
 $ cd ~/.ssh
@@ -42,7 +42,7 @@ Your public key has been saved in blog.pub.  #生成的公钥
 $ ssh-keygen -t rsa -C "邮箱地址" -f ~/.ssh/blog #生成ssh key的名称为blog
 ```
 
-##添加ssh key到Github
+## 添加ssh key到Github
 1.登录GitHub系统；点击右上角账号头像的“▼”→Settings→SSH kyes→Add SSH key。
 
 2.复制id_rsa.pub的公钥内容。
@@ -63,7 +63,7 @@ $ ssh -T git@github.com
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年11月28日 11:14 初稿

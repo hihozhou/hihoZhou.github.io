@@ -11,17 +11,17 @@ description: php daemon
 
 [TOC]
 
-#简介
+# 简介
 　　一般Server程序都是运行在系统后台，这与普通的交互式命令行程序有很大的区别。
 glibc里有一个函数daemon。调用此函数，就可使当前进程脱离终端变成一个守护进程，
 具体内容参见man daemon。PHP中暂时没有此函数，当然如果你有兴趣的话，可以写一个PHP的扩展函数来实现。
 
-#方法:
+# 方法:
 
 - 使用nohup
 - 使用PHP代码来实现
 
-##一 、使用nohup
+## 一 、使用nohup
 
 ```bash
 php myprog.php > log.txt &
@@ -34,7 +34,7 @@ php myprog.php > log.txt &
 `php myprog.php &`这样执行程序虽然也是转为后台运行，实际上是依赖终端的，当用户退出终端时进程就会被杀掉。
 
 
-##二、使用PHP代码来实现
+## 二、使用PHP代码来实现
 
 ```php
 function daemonize()
@@ -84,7 +84,7 @@ sleep(1000);
 
 
 
-##迭代
+## 迭代
 
 
 * 2016年06月24日 17:30:00 初稿

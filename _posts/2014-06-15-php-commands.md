@@ -9,7 +9,7 @@ description: linux命令。
 ---
 
 
-##apt-cache depends xxx
+## apt-cache depends xxx
 `apt-cache depends xxx` — 查看该软件包的依赖关系  
 
 例子:
@@ -18,7 +18,7 @@ description: linux命令。
 apt-cache depends build-essential
 ```
 
-##cmake . -LH  
+## cmake . -LH  
 `cmake . -LH` — 查看cmake源码编译的所有配置选项
 
 ```bash
@@ -30,7 +30,7 @@ apt-cache depends build-essential
 
 —End—
 
-##迭代
+## 迭代
 
 
 * 2016年10月23日 22:13 
