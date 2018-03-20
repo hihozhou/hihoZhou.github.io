@@ -58,6 +58,12 @@ firewall-cmd --zone=public --add-port=1433/tcp --permanent
 firewall-cmd --reload
 ```
 
+6.启动和停止sqlserver服务
+```
+sudo systemctl start mssql-server
+sudo systemctl stop mssql-server
+```
+
 
 ## 安装SQL Server Tools
 官方安装文档见：[https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools#ubuntu](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools#ubuntu)。
@@ -101,6 +107,22 @@ source ~/.bashrc
 
 关于sqlcmd的使用可以参考：[https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility)。
 
+5.使用sqlcmd链接SQL Server  
+帐号为：sa  
+密码是刚刚是用`sudo /opt/mssql/bin/mssql-conf setup`设置的密码
+
+6.使用
+
+```bash
+sqlcmd -U sa
+>select * from sysdatabases;
+>go
+
+```
+
+
+
+
 —End—
 
 
@@ -110,3 +132,4 @@ source ~/.bashrc
 
 ## 参考
 
+- [《SQL 教程》](http://www.w3school.com.cn/sql/)
