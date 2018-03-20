@@ -120,8 +120,9 @@ sqlcmd -U sa
 
 ```
 
+## 使用php链接SQL Server
 
-
+[PHP链接SQL Server](https://www.microsoft.com/en-us/sql-server/developer-get-started/php/ubuntu/step/2.html)
 
 —End—
 
@@ -133,3 +134,5 @@ sqlcmd -U sa
 ## 参考
 
 - [《SQL 教程》](http://www.w3school.com.cn/sql/)
+- [《Get started with SQL Server》](https://www.microsoft.com/en-us/sql-server/developer-get-started/php/ubuntu/step/2.html)
+- [php_sqlsrv needs to be 5+ to work with msodbcsql 17 but it is not released as stable.](https://stackoverflow.com/questions/48830366/new-microsoft-odbc-driver-17-breaks-lamp-server)
