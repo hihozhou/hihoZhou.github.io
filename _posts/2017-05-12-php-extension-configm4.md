@@ -1,15 +1,21 @@
 ---
 layout: post
-title: PHP扩展下的config.m4
+title: PHP扩展开发--编写第一个php扩展
 date: 2017-05-12
 categories: blog
-tags: [php扩展,config.m4]
+tags: [php扩展,php扩展开发]
 description: config.m4
 
 ---
 
 
-## config.m4
+## 开发准备
+
+- linux终端
+- php源码，可以倒php官网下载你需要开发扩展的php版本
+
+
+
 config.m4是unix下构建系统的配置文件，可以告诉系统configure 选项是支持的，php扩展中就用到config.m4。
 请看[php扩展关于config.m4的官方文档](http://php.net/manual/zh/internals2.buildsys.configunix.php)
 

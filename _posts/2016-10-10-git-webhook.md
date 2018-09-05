@@ -51,6 +51,35 @@ git remote set-url origin ​
 //如git remote set-url https://hihozhou:123@bitbucket.org/hihozhou/test.git
 ```
 
+### 更改www用户登录权限
+
+有时候，我们需要登录www-data用户进行一些shell操作，例如安装npm等，注意：这里在正式环境上不建议
+由于本人项目中使用npm打包，并且使用nvm对node管理，
+所以测试环境上自动跟新，需要对www-data用户允许登录和运行shell安装node和nvm。
+
+
+
+```bash
+sudo vim /etc/passwd
+```
+
+找到`www-data`那一行，
+eg:
+```
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+```
+可以发现www-data用户是不允许登录的
+
+如果登录root再切换www-data会提示`This account is currently not available.`
+```bash
+su root
+su www-data
+This account is currently not available.
+```
+
+然后我们将`/usr/sbin/nologin`改为`/bin/bash`，然后`:wq`保存退出，就可以切换www-data用户
+
+
 
 —End—
 
