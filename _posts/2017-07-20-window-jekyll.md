@@ -43,7 +43,7 @@ description: window系统安装jekyll
 ### 2.2错误
 运行`jekyll serve`可能会报错，一般情况是缺少库
 ![7.png](/source/images/window-jekyll/7.png)
-只要`gem install 缺少的库`就可以了
+只要`gem install 缺少的库`就可以了,如`gem install tzinfo`
 
 —End—
 
