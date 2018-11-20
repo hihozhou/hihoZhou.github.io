@@ -4,7 +4,7 @@ title: Window下编写php扩展和编译扩展成dll
 date: 2018-09-27
 categories: blog
 tags: [php扩展,window,dll]
-description: window下编写php扩展，和编译php扩展成dll文件
+description: window下编写php以及编译php扩展dll
 
 ---
 
