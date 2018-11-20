@@ -108,6 +108,10 @@ configure --disable-all  --enable-cli --enable-debug
 执行成功后会提示执行`nmake`
 ![13.png](/source/images/window-compile-php-extensions/13.png)
 
+执行这一步会在`main`目录下生成`config.w32.h`文件，编译`php扩展`会需要用到这个文件，
+所以如果是编译php扩展则执行下一步`nmake`，如果是只是php编译扩展可以不执行`nmake
+
+### 3.4 执行nmake编译
 然后执行`nmake` 开始编译
 
 等待数分钟后,在php-src 目录应该够找到能够多了一个`编译位数的目录`（x32或x64），在目录下有 Release_TS (或者 Release_NTS 或者 Debug_TS ) 这样的目录
@@ -120,7 +124,7 @@ configure --disable-all  --enable-cli --enable-debug
 ![15.png](/source/images/window-compile-php-extensions/15.png)
 
 
-### 4.编译php扩展
+## 4.编译php扩展
 
 ## 迭代
 
