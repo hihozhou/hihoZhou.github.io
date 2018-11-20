@@ -70,25 +70,62 @@ phpsdk_buildtree脚本将根据当前使用的VC ++版本创建路径，并切�
 ![7.png](/source/images/window-compile-php-extensions/7.png)
 
 ## 3.编译php
-### 3.1 编译
+
+### 3.1 构建配置的环境
 上面已经将编译前的构建准备环境好了，编译前在php-sdk-binary-tools中调用starter脚本以自动设置所需构建配置的环境`phpsdk-vc15-x64.bat`，
+
 ### 3.2 执行buildconf
-切换到php源码根目录，然后执行`buildconf`命令。
+切换到`php源码根目录`，然后执行`buildconf`命令。
 如果提示`输入错误: 没有文件扩展“.js”的脚本引擎。`
 ![8.png](/source/images/window-compile-php-extensions/8.png)
-这里主要原因是系统安装IDE（Dreamwear、UltraEdit、EditPlus，我之前安装phpstorm修改了）后后修改了.js文件的默认打开方式。  
+
+这里主要原因是：系统安装IDE（Dreamwear、UltraEdit、EditPlus，我之前安装phpstorm修改了）后后修改了.js文件的默认打开方式。  
 当想直接执行js脚本时就会出现此错误。  
 快捷键`win + r`，然后输入`regedit`,打开注册表编辑器，定位[HKEY_CLASSES_ROOT.js]这一项，双击默认值将其改为“JSFile”即可。如图所示：
 ![9.png](/source/images/window-compile-php-extensions/9.png)
 ![10.png](/source/images/window-compile-php-extensions/10.png)
 ![11.png](/source/images/window-compile-php-extensions/11.png)
+
 然后就可以执行成功了
+
 ![12.png](/source/images/window-compile-php-extensions/12.png)
 
 
+
+### 3.3 编译配置
+
+执行以下命令进行编译php配置：
+
+```bash
+configure --disable-all  --enable-cli
+```
+
+注意：可以自己适当调整，参数可以使用`configure --help`查看，如
+```bash
+configure --disable-all  --enable-cli --enable-debug
+```
+
+执行成功后会提示执行`nmake`
+![13.png](/source/images/window-compile-php-extensions/13.png)
+
+然后执行`nmake` 开始编译
+
+等待数分钟后,在php-src 目录应该够找到能够多了一个`编译位数的目录`（x32或x64），在目录下有 Release_TS (或者 Release_NTS 或者 Debug_TS ) 这样的目录
+
+![14.png](/source/images/window-compile-php-extensions/14.png)
+
+如果编译正常的话 这下面会有 php.exe 文件 证明编译php文件成功.
+
+运行编译好的 `php.exe -v`查看是否正常运行
+![15.png](/source/images/window-compile-php-extensions/15.png)
+
+
+### 4.编译php扩展
+
 ## 迭代
 
-* 2018年09月27日 15：45 初稿
+* 2018年11月17日 15：45 初稿
+* 2018年11月20日 22：26 添加最后编译php步骤
 
 ## 参考
 
