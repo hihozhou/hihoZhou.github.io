@@ -102,7 +102,7 @@ configure --disable-all  --enable-cli
 
 注意：可以自己适当调整，参数可以使用`configure --help`查看，如
 ```bash
-configure --disable-all  --enable-cli --enable-debug
+configure --disable-all  --enable-cli --enable-debug --with-all-shared
 ```
 
 执行成功后会提示执行`nmake`
@@ -125,6 +125,56 @@ configure --disable-all  --enable-cli --enable-debug
 
 
 ## 4.编译php扩展
+
+### 4.1 创建php扩展
+如果我们只是编译某些已经开放好的扩展源码，可以不用运行这一步，这里创建一个demo扩展进行编译。    
+使用`git bash`进入到`源码的地址\ext`目录，执行:
+
+```bash
+php.exe ext_skel_win32.php --extension=my_function
+```  
+注：这里为什么要使用git bash工具，是因为git bash自带模拟linux环境，`my_function`为我这里需要创建的扩展，具体可以根据自己更改  
+执行工具创建时不是提示`'sh' is not recognized as an internal or external command,`  
+![16.png](/source/images/window-compile-php-extensions/16.png)
+
+`git bash`执行结果:
+![17.png](/source/images/window-compile-php-extensions/17.png)  
+
+可以看到在源码ext目录下多了一个`my_function`的目录，这个就是我们刚刚使用使用`ext_skel_win32.php`命令出创建的初始扩展代码
+
+![18.png](/source/images/window-compile-php-extensions/18.png)  
+
+### 4.2 修改源码
+1.我们编辑`my_function`下的`my_function.c`文件。
+添加一个方法my_function_test方法，代码如下：
+```c
+PHP_FUNCTION(my_function_test) {
+   php_printf("This is my function PHP extension! \n");
+}
+
+```
+
+2.然后将`PHP_FE(my_function_test, NULL)`添加到`const zend_function_entry my_function_functions[]`中，但要放在`PHP_FE_END`前：
+![22.png](/source/images/window-compile-php-extensions/22.png)
+
+
+
+### 4.3 编译扩展
+切换回window的cmd
+
+1.进入`php-sdk-binary-tools`目录使用`phpsdk-vc15-x64.bat`  
+2.切换到php源码目录，运行`buildconf`  
+3.在执行完`buildconf`后如果执行`configure`命令，会提示类似以下错误：  
+
+![19.png](/source/images/window-compile-php-extensions/19.png)
+  
+打开提示的文件，找到对应的行数，发现结尾多出多余的注释符号。这里可能是工具的问题，
+![20.png](/source/images/window-compile-php-extensions/20.png)
+
+解决方法：打开扩展源码的`config.w32`，找到`// Otherwise, use ARG_ENABLE`这句注释删除，重新运行`buildconf`就可以了。
+![21.png](/source/images/window-compile-php-extensions/21.png)
+
+
 
 ## 迭代
 
