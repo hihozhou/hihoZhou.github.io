@@ -172,6 +172,9 @@ PHP_FUNCTION(my_function_test) {
 ![20.png](/source/images/window-compile-php-extensions/20.png)
 
 解决方法：打开扩展源码的`config.w32`，找到`// Otherwise, use ARG_ENABLE`这句注释删除，重新运行`buildconf`就可以了。
+注意：
+- 删除的注释是你需要编译参数的上面的注释，这里看`ARG_WITH`还是`ARG_ENABLE`，只要删除对应上面的注释即可
+- ARG_WITH和ARG_ENABLE不可同时开启
 ![21.png](/source/images/window-compile-php-extensions/21.png)
 
 
