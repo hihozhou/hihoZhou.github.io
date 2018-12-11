@@ -182,6 +182,19 @@ PHP_FUNCTION(my_function_test) {
 
 ![23.png](/source/images/window-compile-php-extensions/23.png)
 
+4.运行`configure --disable-all --enable-cli --enable-my_function=shared`进行编译配置：  
+
+发现报错提示：
+```bash
+F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2) Microsoft JScript 运行时错误: 'PHP_EXTNAME_SHARED' 未定义
+```
+解决办法：重新打开扩展的`config.w32`文件，将下图`, PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1"`删除
+![24.png](/source/images/window-compile-php-extensions/24.png)
+
+重新开始`buildconf`->`运行编译配置命令`，可以看到编译配置成功提示`Enable extensions:`多出我们的扩展：
+![25.png](/source/images/window-compile-php-extensions/25.png)
+
+
 
 ## 迭代
 
