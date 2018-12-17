@@ -132,7 +132,8 @@ configure --disable-all  --enable-cli --enable-debug --with-all-shared
 
 ```bash
 php.exe ext_skel_win32.php --extension=my_function
-```  
+```
+
 注：这里为什么要使用git bash工具，是因为git bash自带模拟linux环境，`my_function`为我这里需要创建的扩展，具体可以根据自己更改  
 执行工具创建时不是提示`'sh' is not recognized as an internal or external command,`  
 ![16.png](/source/images/window-compile-php-extensions/16.png)
@@ -147,6 +148,7 @@ php.exe ext_skel_win32.php --extension=my_function
 ### 4.2 修改源码
 1.我们编辑`my_function`下的`my_function.c`文件。
 添加一个方法my_function_test方法，代码如下：
+
 ```c
 PHP_FUNCTION(my_function_test) {
    php_printf("This is my function PHP extension! \n");
