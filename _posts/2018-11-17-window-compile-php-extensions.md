@@ -196,6 +196,15 @@ F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2)
 重新开始`buildconf`->`运行编译配置命令`，可以看到编译配置成功提示`Enable extensions:`多出我们的扩展：
 ![25.png](/source/images/window-compile-php-extensions/25.png)
 
+5.运行`nmake`命令进行编译，等待几分钟到十几分钟后，终端如果出现类似下面编译成功自己即表示编译成功
+![26.png](/source/images/window-compile-php-extensions/26.png)
+
+并且在源码目录下发现多了一个`x64`的目录，如果编译的事32位则是`x86`，里面有一个`Release_TS`（release表示非debug，相对应为debug，TS为线性安全，相对应为NTS），
+里面的文件就是我们所编译的出来的php文件，并且发现有`php_my_function.dll`文件就是我们编译出来的扩展文件
+![27.png](/source/images/window-compile-php-extensions/27.png)
+
+6.测试
+直接使用`编译出来的目录\php.exe -v` 测试是否编译正常。
 
 
 ## 迭代
