@@ -199,18 +199,56 @@ F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2)
 5.运行`nmake`命令进行编译，等待几分钟到十几分钟后，终端如果出现类似下面编译成功自己即表示编译成功
 ![26.png](/source/images/window-compile-php-extensions/26.png)
 
-并且在源码目录下发现多了一个`x64`的目录，如果编译的事32位则是`x86`，里面有一个`Release_TS`（release表示非debug，相对应为debug，TS为线性安全，相对应为NTS），
-里面的文件就是我们所编译的出来的php文件，并且发现有`php_my_function.dll`文件就是我们编译出来的扩展文件
+并且在源码目录下发现多了一个`x64`的目录，如果编译的事32位则是`x86`，  
+里面有一个`Release_TS`（release表示非debug，相对应为debug，TS为线性安全，相对应为NTS），  
+里面的文件就是我们所编译的出来的php文件，并且发现有`php_my_function.dll`文件就是我们编译出来的扩展文件。  
 ![27.png](/source/images/window-compile-php-extensions/27.png)
 
-6.测试
-直接使用`编译出来的目录\php.exe -v` 测试是否编译正常。
+6.配置php.ini引用编译的扩展  
+进入编译好的目录，运行`php.exe -v`测试是否编译正常
+![28.png](/source/images/window-compile-php-extensions/28.png)
+运行`php.exe --ini`命令，会发现没有配置文件，并且运行`php.exe -m`会发现没有`PHP Modules`中没有我们创建的`my_function`扩展模块
+![29.png](/source/images/window-compile-php-extensions/29.png)
+
+复制源码中的`php.ini-development`到编译好的目录中，修改名字为`php.ini`，然后修改`php.ini`文件
+原来：
+```php.ini
+; On windows:
+; extension_dir = "ext"
+```
+改为：
+
+```php.ini
+; On windows:
+extension_dir = "./"
+```
+
+并且：
+![30.png](/source/images/window-compile-php-extensions/30.png)
+再次运行`php -m`测试
+![31.png](/source/images/window-compile-php-extensions/31.png)
+
+7.测试
+添加一个测试文件`test.php`
+
+```php
+<?php
+
+my_function_test();
+```
+
+然后运行`编译生成的php目录\php.exe test.php`
+![32.png](/source/images/window-compile-php-extensions/32.png)
+
+到这里window下编译php和编译php扩展就已经成功了。
+
 
 
 ## 迭代
 
 * 2018年11月17日 15：45 初稿
 * 2018年11月20日 22：26 添加最后编译php步骤
+* 2019年01月13日 14：30 编译后配置和测试
 
 ## 参考
 
