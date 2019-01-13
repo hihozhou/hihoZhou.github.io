@@ -212,13 +212,13 @@ F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2)
 
 复制源码中的`php.ini-development`到编译好的目录中，修改名字为`php.ini`，然后修改`php.ini`文件
 原来：
-```php.ini
+```bash
 ; On windows:
 ; extension_dir = "ext"
 ```
 改为：
 
-```php.ini
+```bash
 ; On windows:
 extension_dir = "./"
 ```
