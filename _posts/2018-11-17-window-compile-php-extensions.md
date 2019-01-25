@@ -131,7 +131,7 @@ configure --disable-all  --enable-cli --enable-debug --with-all-shared
 使用`git bash`进入到`源码的地址\ext`目录，执行:
 
 ```bash
-php.exe ext_skel_win32.php --extension=my_function
+php.exe ext_skel_win32.php --extname==my_function
 ```
 
 注：这里为什么要使用git bash工具，是因为git bash自带模拟linux环境，`my_function`为我这里需要创建的扩展，具体可以根据自己更改  
