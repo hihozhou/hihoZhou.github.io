@@ -247,6 +247,16 @@ my_function_test();
 
 到这里window下编译php和编译php扩展就已经成功了。
 
+## nmake clean
+
+`nmake clean`命令会清楚编译的的文件，但如：`目录`和`php.ini`是不会删除的
+
+在修改只是修改扩展的情况下，不要运行`nmake clean`命令，只需要中心`configure`和`nmake`就可以单独重新编译修改的扩展而不用整个php扩展，
+这样可以大大提高开发扩展的效率，之前不知道一直运行`nmake clean`命令，每次扩展修改一点代码都要等10多分钟才出结果
+
+![33.png](/source/images/window-compile-php-extensions/33.png)
+
+![34.png](/source/images/window-compile-php-extensions/34.png)
 
 
 ## 迭代
@@ -254,6 +264,7 @@ my_function_test();
 * 2018年11月17日 15：45 初稿
 * 2018年11月20日 22：26 添加最后编译php步骤
 * 2019年01月13日 14：30 编译后配置和测试
+* 2019年02月03日 11：22 nmake clean
 
 ## 参考
 
