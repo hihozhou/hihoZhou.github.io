@@ -100,7 +100,8 @@ phpsdk_buildtree脚本将根据当前使用的VC ++版本创建路径，并切�
 configure --disable-all  --enable-cli
 ```
 
-注意：可以自己适当调整，参数可以使用`configure --help`查看，如
+注意：可以自己适当调整，参数可以使用`configure --help`查看，如：
+
 ```bash
 configure --disable-all  --enable-cli --enable-debug --with-all-shared
 ```
@@ -187,9 +188,11 @@ PHP_FUNCTION(my_function_test) {
 4.运行`configure --disable-all --enable-cli --enable-my_function=shared`进行编译配置：  
 
 发现报错提示：
+
 ```bash
 F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2) Microsoft JScript 运行时错误: 'PHP_EXTNAME_SHARED' 未定义
 ```
+
 解决办法：重新打开扩展的`config.w32`文件，将下图`, PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1"`删除
 ![24.png](/source/images/window-compile-php-extensions/24.png)
 
@@ -212,10 +215,12 @@ F:\www\php-sdk-binary-tools\phpdev\vc15\x64\php-7.2.12-src\configure.js(5490, 2)
 
 复制源码中的`php.ini-development`到编译好的目录中，修改名字为`php.ini`，然后修改`php.ini`文件
 原来：
+
 ```bash
 ; On windows:
 ; extension_dir = "ext"
 ```
+
 改为：
 
 ```bash
