@@ -42,7 +42,7 @@ git clone https://github.com/opencv/opencv_contrib.git --depth 1
 2.配置编译编译
 
 ```bash
-cmake -D CMAKE_BUILD_TYPE=RELEASE  -G "Visual Studio 15 2017 Win64" -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D BUILD_EXAMPLES=OFF -D BUILD_JAVA=OFF -D BUILD_TESTS=OFF -D BUILD_DOCS=OFF -D BUILD_opencv_world=ON -D OPENCV_EXTRA_MODULES_PATH=F:\www\opencv_contrib ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE  -G "Visual Studio 15 2017 Win64" -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D BUILD_EXAMPLES=OFF -D BUILD_JAVA=OFF -D BUILD_TESTS=OFF -D BUILD_DOCS=OFF -D BUILD_opencv_world=ON -D OPENCV_EXTRA_MODULES_PATH=F:/www/opencv_contrib/modules ..
 ```
 
 - 使用`-G`参数指定使用电脑上的`Visual Studio 15 2017`进行编译
@@ -62,6 +62,12 @@ cmake --build . --target INSTALL --config Release
 ![6.png](/source/images/window-compile-opencv/6.png)
 
 编译安装过程比较漫长，可以考虑去做点啥事情。 
+![7.png](/source/images/window-compile-opencv/7.png)
+
+编译成功后在`install`目录生成编译后的文件
+
+![8.png](/source/images/window-compile-opencv/8.png)
+
 
 
 —End—
