@@ -68,34 +68,28 @@ sudo ln -s /usr/java/jdk1.8/bin/java java
 
 ### 首次访问jenkins
 
-1.网页打开`ip:端口`，我这里是`192.168.199.254:8088`
-
+- 1.网页打开`ip:端口`，我这里是`192.168.199.254:8088`
 ![2.png](/source/images/gitlab-jenkins/2.png)
-
 这里它提示密码存放在`/var/lib/jenkins/secrets/initialAdminPassword`，打开该文件复制密码输入，然后点击`Continue`，
 
-2.选择`Install suggested plugins`安装建议的插件
-
+- 2.选择`Install suggested plugins`安装建议的插件
 ![3.png](/source/images/gitlab-jenkins/3.png)
-
 插件安装中...
 ![4.png](/source/images/gitlab-jenkins/4.png)
 
-3.安装完成后，创建管理员用户
+- 3.安装完成后，创建管理员用户
 ![5.png](/source/images/gitlab-jenkins/5.png)
-
 点击`Save and Continue`
-
 ![6.png](/source/images/gitlab-jenkins/6.png)
 ![7.png](/source/images/gitlab-jenkins/7.png)
 
 
-4.登录账户
+- 4.登录账户
 ![8.png](/source/images/gitlab-jenkins/8.png)
 ![9.png](/source/images/gitlab-jenkins/9.png)
 
 
-5.安装插件
+## 安装Jenkins插件
 
 点击左侧导航栏`Manage Jenkins` -> `Manage Plugins` -> `Available`
 
@@ -104,7 +98,7 @@ sudo ln -s /usr/java/jdk1.8/bin/java java
 ![10.png](/source/images/gitlab-jenkins/10.png)
 
 
-6.创建测试
+## Jenkins创建测试
 点击左边菜单栏 `New Item`
 ![11.png](/source/images/gitlab-jenkins/11.png)
 
@@ -127,7 +121,7 @@ sudo ln -s /usr/java/jdk1.8/bin/java java
 测试信息
 ![17.png](/source/images/gitlab-jenkins/17.png)
 
-7.提交后自动运行测试
+### 提交后自动运行测试
 
 - 1.点击`Configure` -> `Build Triggers` -> `Build when a change is pushed to GitLab. GitLab webhook URL:`
 
@@ -143,7 +137,7 @@ sudo ln -s /usr/java/jdk1.8/bin/java java
 现在如果push的话jenkins就会自动运行测试
 
 
-8.指定运行脚本
+### 指定运行脚本
 
 点击`Configure` -> `Build` -> `Add build step` -> `Execute shell`
 在`Command`添加名利即可
