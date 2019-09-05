@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ElasticSearch（一）——安装和使用
-date: 2019-08-26
+date: 2019-09-02
 categories: blog
 tags: [ubuntu,ElasticSearch]
 description: ElasticSearch
