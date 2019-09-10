@@ -287,6 +287,131 @@ Notify.test_email('接收方邮件地址','邮件标题','邮件内容').deliver
 ##　使用frp将本地gitlab代理到外网
 
 
+由于gitlab使用机器配置需要比较大，所以打算将gitlab搭建在本地机子上，使用frp做内网穿透，然后通过外网代理到本地机子的gitlab上
+
+这样的好处是：
+
+- 1.线上的服务器可以配置低一点都可以
+- 2.gitlab搭建在本地，在内网时候可以通过本地网络，速度飞快
+- 3.本地机子随便弄点高配置也很便宜
+- 4.本地仓库好管理
+
+### 1.部署服务端
+
+
+1.服务端部署frp server
+
+下载[frp](https://github.com/fatedier/frp/releases)到服务器上，并解压
+
+
+```bash
+wget https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_amd64.tar.gz
+tar -zxvf frp_0.29.0_linux_amd64.tar.gz
+```
+
+```bash
+# 编辑配置文件
+cd frp_0.29.0_linux_amd64/
+vim frps.ini
+```
+
+编辑配置
+
+```bash
+[common]
+bind_port = 7000 # frp server和客户端通信端口
+token = hihozhou # frp server和客户端通信验证token，安全
+vhost_http_port = 8000 # 外部访问端口，http服务，可以设置nginx代理到这个端口
+```
+
+启动frp server端服务
+
+```bash
+nohup ./frps -c ./frps.ini &
+```
+
+2.配置服务端nginx转发到frp server
+
+```bash
+
+server {
+
+    ......
+
+    location / {
+        client_max_body_size 0;
+        gzip off;
+    
+        proxy_read_timeout      300;
+        proxy_connect_timeout   300;
+        proxy_redirect          off;
+    
+        proxy_http_version 1.1;
+    
+        proxy_set_header    Host                $http_host;
+        proxy_set_header    X-Real-IP           $remote_addr;
+        proxy_set_header    X-Forwarded-Ssl     on;
+        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto   $scheme;
+        proxy_pass http://127.0.0.1:8000;#刚刚frp设置的http端口
+    }
+
+    ......
+
+}
+
+
+```
+
+
+访问一下配置的域名
+
+![13.png](/source/images/ubuntu-build-gitlab/13.png)
+
+可以看到nginx成功代理到frp了，这里会提示错误，因为我们还没配置frp客户端
+
+
+### 2.部署本地
+
+同样要想下载解压frp
+
+```bash
+wget https://github.com/fatedier/frp/releases/download/v0.29.0/frp_0.29.0_linux_amd64.tar.gz
+tar -zxvf frp_0.29.0_linux_amd64.tar.gz
+```
+
+
+不过这次是需要配置frp客户端
+
+```bash
+cd frp_0.29.0_linux_amd64
+vim frpc.ini
+```
+
+
+```bash
+[common]
+server_addr = xxx.xxxx.xxx.xxx # frp server端ip
+server_port = 7000 # 配置通信的端口
+token = hihozhou # 服务端设置的token
+
+
+[gitlab]
+type = http # 协议
+local_port = 80 #转发给本地的端口
+custom_domains = gitlab.xxxx.com #域名
+
+```
+
+启动frp 客户端端服务
+
+```bash
+nohup ./frpc -c ./frpc.ini &
+```
+
+大功告成
+
+![14.png](/source/images/ubuntu-build-gitlab/14.png)
 
 
 —End—
