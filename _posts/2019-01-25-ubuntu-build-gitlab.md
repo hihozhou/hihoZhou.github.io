@@ -36,6 +36,7 @@ sudo apt-get install -y postfix
 添加[清华大学源](https://mirror.tuna.tsinghua.edu.cn/help/gitlab-ce/)
 
 首先信任 GitLab 的 GPG 公钥:
+
 ```bash
 curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
 ```
@@ -159,6 +160,7 @@ sudo vim /etc/gitlab/gitlab.rb
 ```
 
 修改一下配置
+
 ```bash
 # 关闭nginx服务
 nginx['enable'] = false
