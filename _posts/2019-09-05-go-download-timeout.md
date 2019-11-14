@@ -3,7 +3,7 @@ layout: post
 title: go 无法下载golang.org/x/库问题 
 date: 2019-09-05
 categories: blog
-tags: [ubuntu,网易云音乐]
+tags: [go]
 description: Ubuntu18.04 安装 网易云音乐
 
 ---
