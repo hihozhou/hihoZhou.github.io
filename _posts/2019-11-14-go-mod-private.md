@@ -39,6 +39,22 @@ go env -w GOPRIVATE=*.corp.example.com
 也就是当你设置`GOPRIVATE`的配置会让go忽略goproxy和gosumdb校验，直接走回源
 
 
+## 添加账号认证
+
+```bash
+vim ~/.netrc
+```
+
+```bash
+machine 域名，如：github.com
+login 账号
+password 密码
+```
+
+
+
+可以是用`go env`查看配置
+
 —End—
 
 ## 迭代
