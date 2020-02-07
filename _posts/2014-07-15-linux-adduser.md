@@ -10,12 +10,12 @@ description:
 
 
 
-
 [TOC]
 
 ## 1、linux添加用户
 
 命令：`adduser [你创建的用户名]`
+
 ```bash
 # adduser onehour
 Enter new UNIX password: 新帐号密码
