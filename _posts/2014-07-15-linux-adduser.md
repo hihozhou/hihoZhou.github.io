@@ -17,7 +17,7 @@ description:
 
 命令：`adduser [你创建的用户名]`
 ```bash
-# adduser onehour
+# adduser hiho
 Enter new UNIX password: 新帐号密码
 Retype new UNIX password: 确认密码
 passwd: password updated successfully
